@@ -56,11 +56,10 @@ struct Condition {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let api_key = "2ee0b0a19d8a4a5ab8942223252601";
-    let location = "Ardabil";
+    let api_key = "YOUR_API_KEY_HERE_PLEASE";
+    let location = "London";
 
     let url = format!("http://api.weatherapi.com/v1/current.json?key={}&q={}", api_key, location);
-
     let response = reqwest::get(&url).await?;
 
     let json: String = response.text().await?;
